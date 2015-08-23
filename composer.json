@@ -1,6 +1,6 @@
 {
   "name": "blixxx/article-anchor",
-  "description": "Artikel Anchor Porjekt",
+  "description": "Artikel Anchor Projekt",
   "keywords": [
     "cwd"
   ],
@@ -33,7 +33,7 @@
   "extra": {
     "contao": {
       "sources": {
-        "": "/system/modules/bx_article-anchor"
+        "": "/system/modules/article_anchor"
       }
     }
   },
