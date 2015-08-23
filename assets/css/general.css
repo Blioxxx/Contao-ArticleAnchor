@@ -1,0 +1,19 @@
+.siteSelector,
+.articleSelector{
+    margin-left: 20px;
+    width: 120px;
+}
+
+#generatedLink{
+    width: 97%;
+    margin-left: 10px;
+}
+
+
+/* spans */
+#page,
+#article,
+#link {
+    margin-bottom: 20px;
+}
+

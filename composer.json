@@ -1,0 +1,43 @@
+{
+  "name": "blixxx/article-anchor",
+  "description": "Artikel Anchor Porjekt",
+  "keywords": [
+    "cwd"
+  ],
+  "type": "contao-module",
+  "homepage": "http://blixxx.net",
+  "license": "LGPL-3.0+",
+  "authors": [
+    {
+      "name": "Mirco Kibiger",
+      "email": "blioxxx@http://blixxx.net",
+      "homepage": "http://blixxx.net",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "email": "blioxxx@http://blixxx.net",
+    "issues": "https://github.com/blixxx/Contao-ArticleAnchor/issues",
+    "forum": "",
+    "irc": "",
+    "source": "https://github.com/blixxx/Contao-ArticleAnchor/"
+  },
+  "require": {
+    "php": ">=5.3",
+    "contao/core": ">=3.1,<4"
+  },
+  "suggest": {
+  },
+  "conflict": {
+  },
+  "extra": {
+    "contao": {
+      "sources": {
+        "": "/system/modules/bx_article-anchor"
+      }
+    }
+  },
+  "branch-alias": {
+    "dev-development": "5-dev"
+  }
+}

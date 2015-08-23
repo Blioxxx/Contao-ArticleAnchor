@@ -1,0 +1,62 @@
+<div id="tl_buttons">
+    <a href="<?php echo $this->referer;?>" class="header_back" title="<?php echo $this->backTitle;?>" accesskey="b" onclick="Backend.getScrollOffset();"><?php echo $this->backTitle; ?></a>
+</div>
+<h2 class="sub_headline"><?php echo $this->headline; ?></h2>
+
+<div class="sub_headline">
+    <?php
+    if($_POST['articleSelector'] != ""){
+        $general = new Blixxx\Anchor\general();
+        $link = $general->generateLink($_POST['articleSelector'],$_POST['host']);
+    }
+
+    switch ($_POST['mode']){
+        case "":
+            ?>
+            <span id="page">
+                <form action="/contao/main.php?do=article_anchor&ref=<? echo $_GET['ref'] ?>" method="post">
+                    <input type="hidden" name="REQUEST_TOKEN" value="<? echo \Contao\RequestToken::get() ?>">
+                    <input type="hidden" name="mode" value="article">
+                    <select class="siteSelector" name="siteSelector">
+                        <? for($i = 0; $i < count($this->arrPages); $i++){
+                            ?><option value="<? echo $this->arrPages[$i]['id']; ?>"><? echo $this->arrPages[$i]['title']; ?></option><?
+                        }?>
+                    </select>
+                    <button type="submit">Weiter</button>
+                </form>
+            </span>
+            <?
+            break;
+        case "article":
+            ?>
+            <span id="article">
+                <form action="/contao/main.php?do=article_anchor&ref=<? echo $_GET['ref'] ?>" method="post">
+                    <input type="hidden" name="REQUEST_TOKEN" value="<? echo \Contao\RequestToken::get() ?>">
+                    <input type="hidden" name="host" value="<? echo $_SERVER['HTTP_HOST'] ?>">
+                    <input type="hidden" name="mode" value="final">
+                    <select class="articleSelector" name="articleSelector">
+                        <?
+                        $db = new \Blixxx\Anchor\db();
+                        $arrArticle = $db->filterArticles($_POST['siteSelector']);
+                        for($i = 0; $i < count($arrArticle); $i++){
+                            ?><option value="<? echo $arrArticle[$i]['alias']; ?>"><? echo $arrArticle[$i]['title']; ?></option><?
+                        }?>
+                    </select>
+                    <button type="submit">Senden</button>
+                </form>
+            </span>
+            <?
+            break;
+        case "final":
+            ?>
+            <span id="link">
+                <a class="new" href="/contao/main.php?do=article_anchor&ref=<? echo $_GET['ref'] ?>">Neue Anfrage</a>
+
+                <input type="text" id="generatedLink" value="<? echo $link ?>">
+                <!--<button onclick="ClipBoard()">Kopieren</button>-->
+            </span>
+            <?
+            break;
+    }
+    ?>
+</div>
