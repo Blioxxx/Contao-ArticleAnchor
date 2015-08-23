@@ -1,8 +1,8 @@
 {
   "name": "blixxx/article-anchor",
-  "description": "Artikel Anchor Porjekt",
+  "description": "Artikel Anchor Projekt",
   "keywords": [
-    "cwd"
+    "bx"
   ],
   "type": "contao-module",
   "homepage": "http://blixxx.net",
@@ -10,13 +10,13 @@
   "authors": [
     {
       "name": "Mirco Kibiger",
-      "email": "blioxxx@http://blixxx.net",
+      "email": "blioxxx@blixxx.net",
       "homepage": "http://blixxx.net",
       "role": "Developer"
     }
   ],
   "support": {
-    "email": "blioxxx@http://blixxx.net",
+    "email": "blioxxx@blixxx.net",
     "issues": "https://github.com/blixxx/Contao-ArticleAnchor/issues",
     "forum": "",
     "irc": "",
@@ -33,7 +33,7 @@
   "extra": {
     "contao": {
       "sources": {
-        "": "/system/modules/bx_article-anchor"
+        "": "/system/modules/article_anchor"
       }
     }
   },
